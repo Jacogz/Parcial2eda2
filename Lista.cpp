@@ -93,8 +93,13 @@ void Lista::mergeSort(){
     cabeza = merge(mitad1->cabeza, mitad2->cabeza);
 }
 
+
+//Función que transforma la lista ligada a árbol de huffman (Numeral 3)
 void Lista::convertirAHuffman(){
+
+    //Reducción a través de nodos internos hasta que la lista conste de un solo nodo (Raíz del árbol)
     while(cabeza->siguiente != nullptr){
+        //Extracción de nodos menores
         Nodo* min1 = cabeza;
         Nodo* min2 = cabeza->siguiente;
 
@@ -102,12 +107,15 @@ void Lista::convertirAHuffman(){
         min1->siguiente = nullptr;
         min2->siguiente = nullptr;
 
+        //Se declara y agrega un nodo auxiliar
         Nodo* aux = new Nodo('\0', min1->frecuencia + min2->frecuencia);
 
         aux->izquierdo = min1;
         aux->derecho = min2;
 
         agregar(aux);
+
+        //Se reordena la lista
         mergeSort();
     }
 }
