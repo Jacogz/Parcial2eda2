@@ -58,3 +58,7 @@ Para descomprimir una cadena de texto
         9.2.2. Si no, Repetir el proceso concatenando el siguiente caracter
 
 10. Ahora el string inicial se ha convertido en su equivalente descomprimido
+
+11.Prueba de comit
+
+12. Segunda Prueba
